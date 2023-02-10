@@ -1,6 +1,7 @@
 import "./index.css";
 import Employee from "./compoents/Employee";
 import { useState } from "react";
+import ADDEmployee from "./compoents/ADDEmployee copy";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
@@ -49,6 +50,16 @@ function App() {
     },
   ]);
 
+  function newEmployee(name, role, img) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      img: img,
+    };
+    setEmployees([...employees, newEmployee]);
+  }
+
   function updateEmployee(id, newName, newRole) {
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
@@ -85,6 +96,7 @@ function App() {
               );
             })}
           </div>
+          <ADDEmployee newEmployee={newEmployee} />
         </>
       ) : (
         <h3>You can not view the employees</h3>
