@@ -99,7 +99,7 @@ function App() {
           <ADDEmployee newEmployee={newEmployee} />
         </>
       ) : (
-        <h3>You can not view the employees</h3>
+        <h3>You cannot view the employees yet</h3>
       )}
     </div>
   );
